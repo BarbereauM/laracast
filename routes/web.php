@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/posts/{post}', function ($post) {
+
+Route::get('/posts/{post}', [PostsController::class, 'show']);
+/*Route::get('/posts/{post}', function ($post) {
     $posts = [
         'my-first' => 'Hello, this is my first post',
         'my-second' => 'Now this is the last'
@@ -34,4 +37,4 @@ Route::get('/posts/{post}', function ($post) {
     return view('post', [
         'post' => $posts[$post] ?? 'Nothing'
     ]);
-});
+});*/
