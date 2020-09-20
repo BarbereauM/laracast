@@ -15,26 +15,10 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', function () {
-    $name = request('name');
-
-    return view('test',[
-        'name' => $name
-    ]);
+    return view('welcome');
 });
 
 
-Route::get('/posts/{post}', [PostsController::class, 'show']);
-/*Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first' => 'Hello, this is my first post',
-        'my-second' => 'Now this is the last'
-    ];
-
-    if (! array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, we couldn\'t found this page.');
-    }
-
-    return view('post', [
-        'post' => $posts[$post] ?? 'Nothing'
-    ]);
-});*/
+Route::get('/contact', function () {
+    return view('contact');
+});
